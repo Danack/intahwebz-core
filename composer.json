@@ -1,0 +1,19 @@
+{
+	"name": "intahwebz/core",
+	"description": "Core library that defines common interfaces used by the rest of the intahwebz..",
+	"keywords": ["intahwebz", "core", "library"],
+	"autoload": {
+		"psr-0": {
+			"Intahwebz": "src/"
+		}
+	},
+
+	"authors": [
+		{
+			"name": "Dan Ackroyd",
+			"email": "Danack@basereality.com",
+			"homepage": "http://www.basereality.com"
+		}
+	]
+
+}
