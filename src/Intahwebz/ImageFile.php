@@ -26,6 +26,9 @@ abstract class ImageFile {
 	function setWidthHeightFromMaxDimensions($maxWidth, $maxHeight) {
 		$ratio = $this->srcWidth / $this->srcHeight;
 
+		$newWidth = false;
+		$newHeight = false;
+
 		if($this->srcWidth > $maxWidth || $this->srcHeight > $maxHeight){
 			$newWidth = $maxWidth;
 			$newHeight = $newWidth / $ratio;
