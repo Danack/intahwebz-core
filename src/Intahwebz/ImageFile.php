@@ -55,7 +55,7 @@ abstract class ImageFile {
 			return;
 		}
 
-		$pattern = '#(\d+)(\w*)(\d*)#u';
+		$pattern = '#(\d+)([a-zA-Z]*)(\d*)#u';
 
 		$matchResult = preg_match($pattern, $resizeParam, $matches);
 
@@ -73,13 +73,10 @@ abstract class ImageFile {
 
 		$setting = strtolower($matches[2]);
 
-
 		switch($setting) {
 
 			case('x'): {
 				$height = $this->clampValue($matches[3]);
-
-
 				$this->destWidth = $size;
 				$this->destHeight = $height;
 				return;
