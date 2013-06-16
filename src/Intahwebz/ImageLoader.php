@@ -6,8 +6,8 @@ namespace Intahwebz;
 
 interface ImageLoader{
 
-	function createImageFromFile();
-	function createImageFromBlog();
+	function createImageFromFile($srcFileName);
+	function createImageFromBlob($blob);
 
 }
 
