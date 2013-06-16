@@ -45,11 +45,10 @@ abstract class ImageFile {
 
 	function setResize($resizeParam){
 		if($resizeParam == 'thumbnail' || $resizeParam == 'thumb'){
-			$size = THUMBNAIL_SIZE;
 			$this->setWidthHeightFromMaxDimensions(THUMBNAIL_SIZE, THUMBNAIL_SIZE);
 		}
 
-		if ($size == 'original') {
+		if ($resizeParam == 'original') {
 			//TODO - Avoid resize
 			$this->destWidth = $this->srcWidth;
 			$this->destHeight = $this->srcHeight;;
@@ -58,16 +57,17 @@ abstract class ImageFile {
 
 		$pattern = '#(\d+)(\w?)#u';
 
-		$matches = preg_match($pattern, $resizeParam, $match);
+		$matchResult = preg_match($pattern, $resizeParam, $matches);
 
-		if ($matches == 0) {
+		if ($matchResult == 0) {
 			//Match failed, just set Thumbnail size
 			$this->setWidthHeightFromMaxDimensions(THUMBNAIL_SIZE, THUMBNAIL_SIZE);
 		}
 
 		var_dump($matches);
 
-		return $size;
+		exit(0);
+
 	}
 
 }
