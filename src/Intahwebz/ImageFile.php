@@ -18,7 +18,7 @@ abstract class ImageFile {
 	}
 
 	function setWidthHeightFromHeight($newHeight) {
-		$newWidth = ($newHeight * $this->srcHeight) / $this->srcWidth;
+		$newWidth = ($newHeight * $this->srcWidth) / $this->srcHeight;
 		$this->destWidth = intval(ceil($newWidth));
 		$this->destHeight = intval(ceil($newHeight));
 	}
@@ -59,15 +59,32 @@ abstract class ImageFile {
 
 		$matchResult = preg_match($pattern, $resizeParam, $matches);
 
+		//var_dump($matches);
+		//exit(0);
 		if ($matchResult == 0) {
 			//Match failed, just set Thumbnail size
 			$this->setWidthHeightFromMaxDimensions(THUMBNAIL_SIZE, THUMBNAIL_SIZE);
 		}
 
-		var_dump($matches);
+		$size = $matches[1];
+		$setting = strtolower($matches[2]);
 
-		exit(0);
+		switch($setting) {
+			case('w'): {
+				$this->setWidthHeightFromWidth($size);
+				break;
+			}
 
+			case('h'): {
+				$this->setWidthHeightFromHeight($size);
+				break;
+			}
+
+			default:{
+			$this->setWidthHeightFromMaxDimensions($size, $size);
+			break;
+			}
+		}
 	}
 
 }
