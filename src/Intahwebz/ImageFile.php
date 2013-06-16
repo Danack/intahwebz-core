@@ -55,36 +55,64 @@ abstract class ImageFile {
 			return;
 		}
 
-		$pattern = '#(\d+)(\w?)#u';
+		$pattern = '#(\d+)(\w*)(\d*)#u';
 
 		$matchResult = preg_match($pattern, $resizeParam, $matches);
 
-		//var_dump($matches);
-		//exit(0);
 		if ($matchResult == 0) {
 			//Match failed, just set Thumbnail size
 			$this->setWidthHeightFromMaxDimensions(THUMBNAIL_SIZE, THUMBNAIL_SIZE);
+			return;
 		}
 
-		$size = $matches[1];
+		$size = intval($matches[1]);
+		if ($size <= 1) {
+			$this->setWidthHeightFromMaxDimensions(THUMBNAIL_SIZE, THUMBNAIL_SIZE);
+			return;
+		}
+
 		$setting = strtolower($matches[2]);
 
+
 		switch($setting) {
+
+			case('x'): {
+				$height = $this->clampValue($matches[3]);
+
+
+				$this->destWidth = $size;
+				$this->destHeight = $height;
+				return;
+			}
+
 			case('w'): {
 				$this->setWidthHeightFromWidth($size);
-				break;
+				return;
 			}
 
 			case('h'): {
 				$this->setWidthHeightFromHeight($size);
-				break;
+				return;
 			}
 
 			default:{
-			$this->setWidthHeightFromMaxDimensions($size, $size);
-			break;
+				$this->setWidthHeightFromMaxDimensions($size, $size);
+				return;
 			}
 		}
+	}
+
+	function clampValue($height){
+		$height = intval($height);
+
+		if ($height < 5) {
+			$height = 5;
+		}
+		else if ($height > 2048) {
+			$height = 2048;
+		}
+
+		return $height;
 	}
 
 }
