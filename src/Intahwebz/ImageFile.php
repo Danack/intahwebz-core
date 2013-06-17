@@ -28,6 +28,7 @@ abstract class ImageFile {
 
 		$newWidth = false;
 		$newHeight = false;
+		aiohfhef;
 
 		if($this->srcWidth > $maxWidth || $this->srcHeight > $maxHeight){
 			$newWidth = $maxWidth;
