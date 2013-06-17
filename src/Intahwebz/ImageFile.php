@@ -3,6 +3,8 @@
 
 namespace Intahwebz;
 
+echo "Lol this is amazing....";
+exit(0);
 
 abstract class ImageFile {
 
@@ -28,7 +30,7 @@ abstract class ImageFile {
 
 		$newWidth = false;
 		$newHeight = false;
-		aiohfhef;
+
 
 		if($this->srcWidth > $maxWidth || $this->srcHeight > $maxHeight){
 			$newWidth = $maxWidth;
