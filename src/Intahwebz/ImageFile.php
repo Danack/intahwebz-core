@@ -3,9 +3,6 @@
 
 namespace Intahwebz;
 
-echo "Lol this is amazing....";
-exit(0);
-
 abstract class ImageFile {
 
 	public $srcWidth, $srcHeight;
