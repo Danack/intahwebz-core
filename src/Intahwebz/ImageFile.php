@@ -50,8 +50,6 @@ abstract class ImageFile {
 			$this->setWidthHeightFromMaxDimensions(THUMBNAIL_SIZE, THUMBNAIL_SIZE);
 		}
 
-		echo "This is the new commit.";
-
 		if ($resizeParam == 'original') {
 			//TODO - Avoid resize
 			$this->destWidth = $this->srcWidth;
