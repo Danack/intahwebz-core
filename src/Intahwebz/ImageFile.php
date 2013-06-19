@@ -28,7 +28,6 @@ abstract class ImageFile {
 		$newWidth = false;
 		$newHeight = false;
 
-
 		if($this->srcWidth > $maxWidth || $this->srcHeight > $maxHeight){
 			$newWidth = $maxWidth;
 			$newHeight = $newWidth / $ratio;
@@ -50,6 +49,8 @@ abstract class ImageFile {
 		if($resizeParam == 'thumbnail' || $resizeParam == 'thumb'){
 			$this->setWidthHeightFromMaxDimensions(THUMBNAIL_SIZE, THUMBNAIL_SIZE);
 		}
+
+		echo "Lol i don't even.";
 
 		if ($resizeParam == 'original') {
 			//TODO - Avoid resize
