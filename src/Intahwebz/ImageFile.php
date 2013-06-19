@@ -50,8 +50,6 @@ abstract class ImageFile {
 			$this->setWidthHeightFromMaxDimensions(THUMBNAIL_SIZE, THUMBNAIL_SIZE);
 		}
 
-		echo "Lol i don't even.";
-
 		if ($resizeParam == 'original') {
 			//TODO - Avoid resize
 			$this->destWidth = $this->srcWidth;
