@@ -14,6 +14,10 @@
 			"email": "Danack@basereality.com",
 			"homepage": "http://www.basereality.com"
 		}
-	]
+	],
+
+	"require":{
+		"psr/log": "~1.0"
+	}
 
 }
