@@ -1,5 +1,17 @@
 <?php
 
+namespace Intahwebz {
+
+
+class Utils{
+	public static function wtf(){
+	}
+}
+
+}
+
+
+namespace { // global code
 
 function getClassName($namespaceClass) {
 	$lastSlashPosition = mb_strrpos($namespaceClass, '\\');
@@ -19,6 +31,8 @@ function getNamespace($namespaceClass) {
 	}
 
 	return "\\";
+}
+
 }
 
 ?>
