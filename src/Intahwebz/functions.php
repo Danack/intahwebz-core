@@ -33,6 +33,10 @@ function getNamespace($namespaceClass) {
 	return "\\";
 }
 
+function convertNamespaceClassToFilepath($namespaceClass){
+	return mb_str_replace('\\', "/",  $namespaceClass);
+}
+
 }
 
 ?>
