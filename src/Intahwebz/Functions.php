@@ -209,6 +209,22 @@ function convertNamespaceClassToFilepath($namespaceClass){
 		return $jsonData; //was a value
 	}
 
+	function	safeTextObject($string){
+
+		if (is_object($string) == true) {
+			return "";
+		}
+		if (is_array($string) == true){
+			return "";
+		}
+
+		return htmlentities($string, ENT_DISALLOWED|ENT_HTML401|ENT_NOQUOTES, 'UTF-8');
+	}
+
+	function	safeText($string){
+		return htmlentities($string, ENT_DISALLOWED|ENT_HTML401|ENT_NOQUOTES, 'UTF-8');
+	}
+
 }
 
 ?>
