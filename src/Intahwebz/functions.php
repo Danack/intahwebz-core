@@ -3,7 +3,7 @@
 namespace Intahwebz {
 
 
-class Utils{
+class Functions{
 	public static function wtf(){
 	}
 }
