@@ -13,6 +13,10 @@ class Functions{
 
 namespace { // global code
 
+function getFileLastModifiedTime($fileNameToServe) {
+    return gmdate('D, d M Y H:i:s', filemtime($fileNameToServe)).' GMT';
+}
+
 function getClassName($namespaceClass) {
 	$lastSlashPosition = mb_strrpos($namespaceClass, '\\');
 
