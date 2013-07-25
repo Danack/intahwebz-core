@@ -3,10 +3,10 @@ namespace Intahwebz;
 
 interface Session {
 
-	public static function setSessionVariable($sessionName, $serializedData);
+	public function setSessionVariable($sessionName, $serializedData);
 
-	public static function getSessionVariable($name, $default = false, $clear = false);
+	public function getSessionVariable($name, $default = false, $clear = false);
 
-	public static function unsetSessionVariable($sessionName);
+	public function unsetSessionVariable($sessionName);
 
 }
