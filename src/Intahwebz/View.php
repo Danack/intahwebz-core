@@ -7,7 +7,7 @@ namespace Intahwebz;
 interface View {
 
 	function getVariable($name);
-	function call($functionArgs);
+//	function call($functionArgs);
 
 	function isVariableSet($string);
 

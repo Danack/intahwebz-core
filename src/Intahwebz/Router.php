@@ -9,6 +9,7 @@ interface Router {
 
 	function generateCurrentURL($parameters, $absolute = false);
 
+    function getRoute($routeName, $parameters = array());
     function generateURL(Routable $routable,  $absolute = false);
     function generateURLForRoute($routeName, $parameters = array(), $absolute = false);
 
