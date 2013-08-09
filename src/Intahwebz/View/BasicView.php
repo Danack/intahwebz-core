@@ -9,8 +9,6 @@ class BasicView implements View {
 
     private $variables = array();
 
-    //private $boundFunctions = array();
-
     /**
      * @param $variable
      * @return bool
@@ -54,10 +52,6 @@ class BasicView implements View {
         $this->variables[$variable] = $value;
     }
 }
-
-
-
-?>
 
 
 
