@@ -4,10 +4,7 @@
 namespace Intahwebz;
 
 
-interface ViewModel
-{
-
-	function getVariable($name);
+interface ViewModel {
 
     /**
      * @param array $functionArgs First entry is function name, the rest are the function parameters.
@@ -15,11 +12,11 @@ interface ViewModel
      */
     function call(array $functionArgs);
 
+    function getVariable($name);
 
-	function isVariableSet($string);
+    function isVariableSet($name);
 
-	//TODO - this name sucks
-	function assign($variable, $value);
+    function setVariable($name, $value);
 }
 
 

@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Intahwebz\View;
+namespace Intahwebz\ViewModel;
 
-use Intahwebz\View;
+use Intahwebz\ViewModel;
 
-class BasicView implements View {
+class BasicView implements ViewModel {
 
     /**
      * @var array Stores the bound functions that are available through the viewModel
