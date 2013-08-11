@@ -5,7 +5,7 @@ namespace Intahwebz\ViewModel;
 
 use Intahwebz\ViewModel;
 
-class BasicView implements ViewModel {
+class BasicViewModel implements ViewModel {
 
     /**
      * @var array Stores the bound functions that are available through the viewModel
@@ -45,27 +45,6 @@ class BasicView implements ViewModel {
         $this->variables[$name] = $value;
     }
 
-//    /**
-//     *
-//     * TODO - should this be part of BaseTemplate as it is going to be the same for every view?
-//     *
-//     * @param $params
-//     * @return mixed|void
-//     */
-//    function call($params) {
-//        $functionName = array_shift($params);
-//
-//        if (array_key_exists($functionName, $this->boundFunctions) == true) {
-//            return call_user_func_array($this->boundFunctions[$functionName], $params);
-//        }
-//
-//        if (method_exists($this, $functionName) == false) {
-//            throw new JigException("No method $functionName");
-//        }
-//
-//        return call_user_func_array([$this, $functionName], $params);
-//    }
-
     /**
      * @param $functionName
      * @param callable $callable
@@ -82,7 +61,7 @@ class BasicView implements ViewModel {
      * TODO - should this be replaced with one method to get the callable, and then calling it from the calling code?
      * That would make the stack trace be smaller.
      */
-    function call($params) {
+    function call(array $params) {
         $functionName = array_shift($params);
 
         if (array_key_exists($functionName, $this->boundFunctions) == true) {
