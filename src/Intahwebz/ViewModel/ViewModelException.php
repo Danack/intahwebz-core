@@ -1,8 +1,7 @@
 <?php
 
 
-namespace Intahwebz\View;
-
+namespace Intahwebz\ViewModel;
 
 class ViewModelException extends \Exception{
 
