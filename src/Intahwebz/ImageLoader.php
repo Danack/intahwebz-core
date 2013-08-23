@@ -21,6 +21,3 @@ interface ImageLoader{
 
 }
 
-
-
-?>

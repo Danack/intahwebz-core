@@ -8,5 +8,3 @@ class ViewModelException extends \Exception{
 }
 
 
-
-?>

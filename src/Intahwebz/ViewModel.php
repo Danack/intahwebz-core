@@ -18,7 +18,3 @@ interface ViewModel {
 
     function setVariable($name, $value);
 }
-
-
-
-?>

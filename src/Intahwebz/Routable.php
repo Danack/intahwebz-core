@@ -8,5 +8,3 @@ interface Routable {
     function getRouteParams();
 }
 
-
-?>

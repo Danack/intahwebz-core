@@ -9,6 +9,3 @@ interface Route{
     public function matchRequestAndStoreParams(Request $request);
 }
 
-
-
-?>

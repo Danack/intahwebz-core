@@ -24,6 +24,3 @@ interface Router {
     function	reRouteRequest($routeName);
 }
 
-
-
-?>
