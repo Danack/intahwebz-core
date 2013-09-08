@@ -13,8 +13,12 @@ namespace Intahwebz {
 
 namespace { // global code
 
+    function getLastModifiedTime($timestamp) {
+        return gmdate('D, d M Y H:i:s', $timestamp). ' UTC';
+    }
+
     function getFileLastModifiedTime($fileNameToServe) {
-        return gmdate('D, d M Y H:i:s', filemtime($fileNameToServe)) . ' GMT';
+        return getLastModifiedTime(filemtime($fileNameToServe));
     }
 
     function getClassName($namespaceClass) {
