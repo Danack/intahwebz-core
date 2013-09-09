@@ -8,7 +8,7 @@ abstract class ImageFile {
 	public $srcWidth, $srcHeight;
 	public $destWidth, $destHeight;
     
-    private $thumbnailSize = 256;
+    private $thumbnailSize = 128;
 
 	abstract function saveImage($destFileName);
 
