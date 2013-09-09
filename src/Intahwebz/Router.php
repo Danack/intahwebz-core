@@ -3,7 +3,6 @@
 
 namespace Intahwebz;
 
-use Intahwebz\Route;
 
 interface Router {
 

@@ -3,7 +3,7 @@
 
 namespace Intahwebz;
 
-use Intahwebz\ImageFile;
+//use Intahwebz\ImageFile;
 
 interface ImageLoader{
 

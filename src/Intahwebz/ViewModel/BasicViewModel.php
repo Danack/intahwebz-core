@@ -18,8 +18,9 @@ class BasicViewModel implements ViewModel {
     private $variables = array();
 
     /**
-     * @param $variable
-     * @return bool
+     * @param $name
+     * @internal param $variable
+     * @return mixed
      */
     function getVariable($name) {
         if (array_key_exists($name, $this->variables) == true) {
@@ -54,9 +55,11 @@ class BasicViewModel implements ViewModel {
     }
 
 
+
     /**
-     * @param $params
-     * @return mixed|void
+     * @param array $params
+     * @return mixed
+     * @throws ViewModelException
      * 
      * TODO - should this be replaced with one method to get the callable, and then calling it from the calling code?
      * That would make the stack trace be smaller.

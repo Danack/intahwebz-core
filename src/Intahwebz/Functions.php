@@ -42,6 +42,7 @@ namespace { // global code
     }
 
     function convertNamespaceClassToFilepath($namespaceClass) {
+        /** @noinspection PhpUndefinedFunctionInspection */
         return mb_str_replace('\\', "/", $namespaceClass);
     }
 
@@ -78,8 +79,6 @@ namespace { // global code
 
                 if ($result == false) {
                     throw new \Exception("Failed to create segment [$segment] in ensureDirectoryExists($filePath).");
-
-                    return false;
                 }
             }
         }
@@ -116,6 +115,7 @@ namespace { // global code
             $filepath = mb_substr($filepath, 0, $dotPosition);
         }
 
+        /** @noinspection PhpUndefinedFunctionInspection */
         return mb_str_replace("/", '\\', $filepath);
     }
 

@@ -7,6 +7,8 @@ abstract class ImageFile {
 
 	public $srcWidth, $srcHeight;
 	public $destWidth, $destHeight;
+    
+    private $thumbnailSize = 256;
 
 	abstract function saveImage($destFileName);
 
@@ -25,8 +27,8 @@ abstract class ImageFile {
 	function setWidthHeightFromMaxDimensions($maxWidth, $maxHeight) {
 		$ratio = $this->srcWidth / $this->srcHeight;
 
-		$newWidth = false;
-		$newHeight = false;
+		$newWidth = 0;
+		$newHeight = 0;
 
 		if($this->srcWidth > $maxWidth || $this->srcHeight > $maxHeight){
 			$newWidth = $maxWidth;
@@ -47,7 +49,7 @@ abstract class ImageFile {
 
 	function setResize($resizeParam){
 		if($resizeParam == 'thumbnail' || $resizeParam == 'thumb'){
-			$this->setWidthHeightFromMaxDimensions(THUMBNAIL_SIZE, THUMBNAIL_SIZE);
+			$this->setWidthHeightFromMaxDimensions($this->thumbnailSize, $this->thumbnailSize);
 		}
 
 		if ($resizeParam == 'original') {
@@ -63,13 +65,13 @@ abstract class ImageFile {
 
 		if ($matchResult == 0) {
 			//Match failed, just set Thumbnail size
-			$this->setWidthHeightFromMaxDimensions(THUMBNAIL_SIZE, THUMBNAIL_SIZE);
+			$this->setWidthHeightFromMaxDimensions($this->thumbnailSize, $this->thumbnailSize);
 			return;
 		}
 
 		$size = intval($matches[1]);
 		if ($size <= 1) {
-			$this->setWidthHeightFromMaxDimensions(THUMBNAIL_SIZE, THUMBNAIL_SIZE);
+			$this->setWidthHeightFromMaxDimensions($this->thumbnailSize, $this->thumbnailSize);
 			return;
 		}
 

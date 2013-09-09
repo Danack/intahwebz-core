@@ -8,5 +8,5 @@ interface ObjectCache {
 
 	function 	get($keyName);
 	function 	put($keyName, $object, $ttl);
-	function	clear($keyname);
+	function	clear($keyName);
 }

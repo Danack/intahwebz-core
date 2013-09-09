@@ -3,12 +3,11 @@
 
 namespace Intahwebz;
 
-use Psr\Log\AbstractLogger;
 
 interface LoggerFactory {
 
 	/**
-	 * return AbstractLogger;
+	 * return Psr\Log\AbstractLogger;
 	 */
 	function get($object);
 }
