@@ -16,4 +16,7 @@ interface Request {
     function getMethod();
     function getVariable($variableName, $default = false, $minimum = false, $maximum = false);
 
+
+    
+
 } 
