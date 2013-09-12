@@ -77,5 +77,19 @@ class BasicViewModel implements ViewModel {
 
         throw new ViewModelException("No method [$functionName]");
     }
+
+    //Todo - this should not be in here
+    function setTemplate($templateFile) {
+        // TODO: Implement setTemplate() method.
+    }
+
+    /**
+     * @param $message
+     * @return mixed
+     */
+    function addStatusMessage($message) {
+        //does nothing - for now.
+        
+    }
 }
 

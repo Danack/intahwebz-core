@@ -17,4 +17,14 @@ interface ViewModel {
     function isVariableSet($name);
 
     function setVariable($name, $value);
+
+    function setTemplate($templateFile);
+        
+        
+    
+    /**
+     * @param $message
+     * @return mixed
+     */
+    function addStatusMessage($message);
 }

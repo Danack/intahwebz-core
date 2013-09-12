@@ -7,7 +7,7 @@ namespace Intahwebz;
 interface Request {
 
     function getHostName();
-    function getRefererParams();
+    //function getRefererParams();
     function setRouteParameters($routeParameters);
     function getScheme();
     function getRequestParams();
