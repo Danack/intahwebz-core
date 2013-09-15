@@ -3,6 +3,8 @@
 	"description": "Core library that defines common interfaces used by the rest of the intahwebz..",
 	"keywords": ["intahwebz", "core", "library"],
 
+    "license": "MIT",
+
 	"autoload": {
 		"psr-0": {
 			"Intahwebz": "src/"
