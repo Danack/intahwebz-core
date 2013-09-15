@@ -10,6 +10,8 @@ abstract class ImageFile {
     
     private $thumbnailSize = 128;
 
+    public $imageHandle;
+
 	abstract function saveImage($destFileName);
 
 	function setWidthHeightFromWidth($newWidth) {

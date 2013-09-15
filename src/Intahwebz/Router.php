@@ -17,6 +17,12 @@ interface Router {
     function forwardToRoute(Route $route, $parameters, $absolute = false);
 
     /**
+     * @param Request $request
+     * @return Route
+     */
+    function getRouteForRequest(Request $request);
+    
+    /**
      * @param $routeName
      * @return \Intahwebz\Route
      */
