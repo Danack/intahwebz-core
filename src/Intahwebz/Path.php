@@ -18,6 +18,17 @@ class Path {
     function getPath() {
         return $this->path;
     }
+
+    function getSafePath($directory) {
+        
+        if (!$directory) {
+            throw new \Exception("directory is false, cannot build path from it.");
+        }
+        if (strlen($directory) < 1) {
+            throw new \Exception("directory is zero length, cannot build path from it.");
+        }
+        return $this->path.'/'.$directory.'/';
+    }
 }
 
 
