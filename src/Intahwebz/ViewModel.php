@@ -20,7 +20,7 @@ interface ViewModel {
 
     function setTemplate($templateFile);
         
-        
+    function getTemplate();
     
     /**
      * @param $message

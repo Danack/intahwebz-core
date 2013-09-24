@@ -12,6 +12,8 @@ class BasicViewModel implements ViewModel {
      */
     private $boundFunctions = array();
 
+    protected $template;
+    
     /**
      * @var array Stores the variables available in the ViewModel
      */
@@ -78,10 +80,15 @@ class BasicViewModel implements ViewModel {
         throw new ViewModelException("No method [$functionName]");
     }
 
-    //Todo - this should not be in here
+    
     function setTemplate($templateFile) {
-        // TODO: Implement setTemplate() method.
+        $this->template = $templateFile;
     }
+
+    function getTemplate() {
+        return $this->template;
+    }
+    
 
     /**
      * @param $message
