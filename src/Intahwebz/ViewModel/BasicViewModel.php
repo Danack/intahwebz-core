@@ -13,6 +13,10 @@ class BasicViewModel implements ViewModel {
     private $boundFunctions = array();
 
     protected $template;
+
+    protected $routeParams = array();
+
+    protected $response = null;
     
     /**
      * @var array Stores the variables available in the ViewModel
@@ -96,7 +100,18 @@ class BasicViewModel implements ViewModel {
      */
     function addStatusMessage($message) {
         //does nothing - for now.
-        
+    }
+
+    
+    function setRouteParams(array $params){
+        $this->routeParams = $params;
+    }
+
+    /**
+     * @param $data
+     */
+    function setResponse($data){
+        $this->response = $data;
     }
 }
 

@@ -15,7 +15,12 @@ interface Route{
     public function mapParametersToFunctionArguments(Request $request);
     public function matchRequestAndStoreParams(Request $request);
 
-    public function getRouteParam($name);
+    public function getTemplate();
     
+    public function getRouteParam($name);
+    public function getRouteParams();
+
+    public function getACLPrivilegeName();
+    public function getACLResourceName();
 }
 

@@ -9,4 +9,9 @@ interface Session {
 
 	public function unsetSessionVariable($sessionName);
 
+    //TODO - this should not be in here.
+    public function checkLoginAndRedirect();
+
+    //TODO - this should not be in here.
+    public function logoutUser();
 }

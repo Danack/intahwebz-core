@@ -21,10 +21,14 @@ interface ViewModel {
     function setTemplate($templateFile);
         
     function getTemplate();
+
+    function setRouteParams(array $params);
     
     /**
      * @param $message
      * @return mixed
      */
     function addStatusMessage($message);
+
+    function setResponse($data);
 }
