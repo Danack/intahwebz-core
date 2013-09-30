@@ -12,9 +12,14 @@ interface Router {
     function generateURL(Routable $routable,  $absolute = false);
     function generateURLForRoute($routeName, $parameters = array(), $absolute = false);
 
+    /**
+     * Redirect (302) a request
+     * @param $routeName
+     * @param array $parameters
+     * @param bool $absolute
+     * @return mixed
+     */
     function forward($routeName, $parameters = array(), $absolute = false);
-
-    function forwardToRoute(Route $route, $parameters, $absolute = false);
 
     /**
      * @param Request $request
@@ -23,6 +28,7 @@ interface Router {
     function getRouteForRequest(Request $request);
     
     /**
+     * Reroute a request internally (same process).
      * @param $routeName
      * @return \Intahwebz\Route
      */

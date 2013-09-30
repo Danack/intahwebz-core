@@ -30,5 +30,7 @@ interface ViewModel {
      */
     function addStatusMessage($message);
 
+    function getStatusMessages();
+
     function setResponse($data);
 }

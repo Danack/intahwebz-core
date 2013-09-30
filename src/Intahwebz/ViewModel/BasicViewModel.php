@@ -102,6 +102,10 @@ class BasicViewModel implements ViewModel {
         //does nothing - for now.
     }
 
+    function getStatusMessages() {
+        return array();
+    }
+
     
     function setRouteParams(array $params){
         $this->routeParams = $params;

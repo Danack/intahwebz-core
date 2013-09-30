@@ -19,7 +19,7 @@ class Path {
         return $this->path;
     }
 
-    function getSafePath($directory) {
+    function getSafePath($directory, $file = null) {
         
         if (!$directory) {
             throw new \Exception("directory is false, cannot build path from it.");
@@ -27,7 +27,13 @@ class Path {
         if (strlen($directory) < 1) {
             throw new \Exception("directory is zero length, cannot build path from it.");
         }
-        return $this->path.'/'.$directory.'/';
+        $return = $this->path.'/'.$directory.'/';
+        
+        if ($file != null) {
+            $return .= $file;
+        }
+        
+        return $return;
     }
 }
 
