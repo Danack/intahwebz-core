@@ -14,5 +14,14 @@ interface Request {
     function getPath();
     function getPort();
     function getMethod();
+
+
+    /**
+     * @param $variableName
+     * @param mixed $default
+     * @param mixed $minimum
+     * @param mixed $maximum
+     * @return mixed
+     */
     function getVariable($variableName, $default = false, $minimum = false, $maximum = false);
 } 
