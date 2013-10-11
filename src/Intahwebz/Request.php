@@ -17,6 +17,16 @@ interface Request {
 
 
     /**
+     * @param $formFileName
+     * @return \Intahwebz\Utils\UploadedFile
+     * @throws \Intahwebz\Utils\FileUploadException
+     * @throws \Exception
+     */
+    function getUploadedFile($formFileName);
+
+    function getReferrer();
+
+        /**
      * @param $variableName
      * @param mixed $default
      * @param mixed $minimum

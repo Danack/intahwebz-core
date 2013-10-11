@@ -7,7 +7,7 @@ interface Route{
     public function getName();
 
     /**
-     * @return RouteMapping
+     * @return \Intahwebz\RouteMapping
      */
     public function getMapping();
 

@@ -175,7 +175,6 @@ namespace { // global code
 
     function json_decode_object($jsonString) {
         $jsonData = json_decode($jsonString, true);
-
         return json_decode_object_internal($jsonData);
     }
 
