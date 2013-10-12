@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Intahwebz\Utils;
+namespace Intahwebz;
 
 
 class UnknownMimeType extends \Exception {

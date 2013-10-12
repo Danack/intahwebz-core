@@ -11,8 +11,8 @@ namespace Intahwebz {
 
 namespace { // global code
 
-    use Intahwebz\Utils\UnknownFileType;
-    use Intahwebz\Utils\UnknownMimeType;
+    use Intahwebz\UnknownFileType;
+    use Intahwebz\UnknownMimeType;
 
     function getLastModifiedTime($timestamp) {
         return gmdate('D, d M Y H:i:s', $timestamp). ' UTC';

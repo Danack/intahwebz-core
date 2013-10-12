@@ -18,8 +18,8 @@ interface Request {
 
     /**
      * @param $formFileName
-     * @return \Intahwebz\Utils\UploadedFile
-     * @throws \Intahwebz\Utils\FileUploadException
+     * @return \Intahwebz\UploadedFile
+     * @throws \Intahwebz\FileUploadException
      * @throws \Exception
      */
     function getUploadedFile($formFileName);
