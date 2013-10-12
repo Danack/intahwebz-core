@@ -331,14 +331,13 @@ namespace { // global code
     }
 
     function getMimeTypeForFileExtension($extension){
+        $knownMimeTypesForExtensions = getKnownMimeTypesForExtensions();
         $extension = strtolower($extension);
 
-        if (array_key_exists($extension, self::$knownMimeTypesForExtensions) == false) {
-            //TODO - why is this giving a compiler error?
+        if (array_key_exists($extension, $knownMimeTypesForExtensions) == false) {
             throw new UnknownFileType($extension, "Unknown file type for extension [$extension]");
         }
 
-        $knownMimeTypesForExtensions = getKnownMimeTypesForExtensions();
         $type = $knownMimeTypesForExtensions[$extension];
 
         return $type;
