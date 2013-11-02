@@ -11,7 +11,7 @@ interface Route{
      */
     public function getMapping();
 
-    public function generateURL($parameters, $absolute = false);
+    public function generateURL(\Intahwebz\Domain $domain, $parameters, $absolute = false);
     public function mapParametersToFunctionArguments(Request $request);
     public function matchRequestAndStoreParams(Request $request);
 

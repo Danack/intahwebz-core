@@ -16,13 +16,13 @@ interface Request {
     function getMethod();
 
 
-    /**
-     * @param $formFileName
-     * @return \Intahwebz\UploadedFile
-     * @throws \Intahwebz\FileUploadException
-     * @throws \Exception
-     */
-    function getUploadedFile($formFileName);
+//    /**
+//     * @param $formFileName
+//     * @return \Intahwebz\UploadedFile
+//     * @throws \Intahwebz\FileUploadException
+//     * @throws \Exception
+//     */
+//    function getUploadedFile($formFileName);
 
     function getReferrer();
 
