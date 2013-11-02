@@ -6,9 +6,7 @@ namespace Intahwebz;
 
 interface Router {
 
-	function generateCurrentURL($parameters, $absolute = false);
-
-    function getRoute($routeName, $parameters = array());
+    function getRoute($routeName);
     function generateURL(Routable $routable,  $absolute = false);
     function generateURLForRoute($routeName, $parameters = array(), $absolute = false);
 
@@ -19,7 +17,7 @@ interface Router {
      * @param bool $absolute
      * @return mixed
      */
-    function forward($routeName, $parameters = array(), $absolute = false);
+    //function forward($routeName, $parameters = array(), $absolute = false);
 
     /**
      * @param Request $request
@@ -27,11 +25,11 @@ interface Router {
      */
     function getRouteForRequest(Request $request);
     
-    /**
-     * Reroute a request internally (same process).
-     * @param $routeName
-     * @return \Intahwebz\Route
-     */
-    function	reRouteRequest($routeName);
+//    /**
+//     * Reroute a request internally (same process).
+//     * @param $routeName
+//     * @return \Intahwebz\Route
+//     */
+//    function	reRouteRequest($routeName);
 }
 

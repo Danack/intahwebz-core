@@ -17,6 +17,11 @@ class BasicViewModel implements ViewModel {
     protected $routeParams = array();
 
     protected $response = null;
+
+    /**
+     * @var \Intahwebz\Route
+     */
+    protected $route;
     
     /**
      * @var array Stores the variables available in the ViewModel
@@ -106,6 +111,9 @@ class BasicViewModel implements ViewModel {
         return array();
     }
 
+    function setRoute(\Intahwebz\Route $route){
+        $this->route = $route;
+    }
     
     function setRouteParams(array $params){
         $this->routeParams = $params;
