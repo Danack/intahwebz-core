@@ -355,4 +355,22 @@ namespace { // global code
         $knownMimeTypesForExtensions[$extension] = $mimeType;
     }
 
+    function getImageFileType($filename) {
+        $knownImageTypes = [
+            'jpg',
+            'jpeg',
+            'gif',
+            'png'
+        ];
+
+        $pathInfo = pathinfo($filename);
+        $fileExtension = mb_strtolower($pathInfo['extension']);
+
+        if (in_array($fileExtension, $knownImageTypes) == true) {
+            return $knownImageTypes[$fileExtension];
+        }
+
+        return 'jpg';
+    }
+
 }

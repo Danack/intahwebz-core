@@ -14,5 +14,8 @@ interface Response {
     function isOK();
     function getStatus();
     function getErrorText();
+
+    function unsetCookie($cookieName);
+    function setCookieVariable($cookieName, $value, $secureOnly = false);
 }
 

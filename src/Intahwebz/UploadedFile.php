@@ -15,7 +15,7 @@ class UploadedFile {
     //TODO - where is this meant to be set.
     var $defaultContentType = null;
 
-    function	__construct($name, $tmpName, $size){
+    function __construct($name, $tmpName, $size) {
         $this->name = $name;
         $this->tmpName = $tmpName;
         $this->size = $size;
@@ -23,7 +23,7 @@ class UploadedFile {
         $this->determineContentType();
     }
 
-    function	determineContentType(){
+    function determineContentType() {
 
         $pathInfo = pathinfo($this->name);
 

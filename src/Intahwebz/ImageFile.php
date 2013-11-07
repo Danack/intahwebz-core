@@ -12,7 +12,7 @@ abstract class ImageFile {
 
     public $imageHandle;
 
-	abstract function saveImage($destFileName);
+	abstract function saveImage($destFileName, $imageType);
 
 	function setWidthHeightFromWidth($newWidth) {
 		$newHeight = ($newWidth * $this->srcHeight) / $this->srcWidth;
