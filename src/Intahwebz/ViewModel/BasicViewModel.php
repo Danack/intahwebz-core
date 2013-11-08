@@ -18,6 +18,8 @@ class BasicViewModel implements ViewModel {
 
     protected $response = null;
 
+    private $mergedParams = array();
+
     /**
      * @var \Intahwebz\Route
      */
@@ -64,8 +66,6 @@ class BasicViewModel implements ViewModel {
     function bindFunction($functionName, callable $callable){
         $this->boundFunctions[$functionName] = $callable;
     }
-
-
 
     /**
      * @param array $params
@@ -124,5 +124,17 @@ class BasicViewModel implements ViewModel {
     function setResponse($data){
         $this->response = $data;
     }
+
+
+
+    function setMergedParams(array $array) {
+        $this->mergedParams = $array;
+    }
+
+    /** @return array */
+    function getMergedParams() {
+        return $this->mergedParams;
+    }
+
 }
 
