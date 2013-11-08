@@ -97,7 +97,6 @@ class BasicViewModel implements ViewModel {
     function getTemplate() {
         return $this->template;
     }
-    
 
     /**
      * @param $message
