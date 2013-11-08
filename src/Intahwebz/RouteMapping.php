@@ -17,10 +17,6 @@ interface RouteMapping {
     
     
     function getMethodName();
-    
-    
-    function getScheme();
-    
 
 }
 
