@@ -8,8 +8,12 @@ class DomainExample implements \Intahwebz\Domain {
 
     private $request;
 
-    function __construct(Request $request) {
+    private $domainName;
+
+    function __construct(Request $request, $domainName) {
         $this->request = $request;
+        $this->domainName = $domainName;
+
     }
 
     function getContentDomain($contentID) {
@@ -25,24 +29,13 @@ class DomainExample implements \Intahwebz\Domain {
      * @return \Intahwebz\DomainInfo
      */
     public function getDomainInfo() {
-        $currentDomain = 'intahwebrouting.test';
-
-        if(isset($_SERVER['HTTP_HOST']) == TRUE){
-            $currentDomain = $_SERVER['HTTP_HOST'];
-        }
-
-        $canonicalDomain = $currentDomain;
-
-        if(mb_stripos($currentDomain, 'www.') !== 0){
-            $canonicalDomain = 'www.'.$canonicalDomain;
-        }
 
         $currentURL = false;
 
         $domainInfo = new \Intahwebz\DomainInfo(
-            $currentDomain,
-            'intahwebrouting.test',
-            $canonicalDomain,
+            $this->domainName,
+            $this->domainName,
+            'www'.$this->domainName,
             $this->request->getScheme(),
             true,
             $currentURL
