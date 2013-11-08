@@ -13,16 +13,8 @@ class DomainExample implements \Intahwebz\Domain {
     }
 
     function getContentDomain($contentID) {
-
         $domainInfo = $this->getDomainInfo();
-
         $domainName = $domainInfo->canonicalDomain;
-
-        if(CDN_ENABLED == TRUE){
-            $cdnID = ($contentID % CDN_CNAMES) + 1;
-            $domainName = "cdn".$cdnID.".".$domainName;
-        }
-
         $scheme = $domainInfo->currentScheme;
 
         return $scheme.'://'.$domainName;
@@ -33,7 +25,7 @@ class DomainExample implements \Intahwebz\Domain {
      * @return \Intahwebz\DomainInfo
      */
     public function getDomainInfo() {
-        $currentDomain = ROOT_DOMAIN;
+        $currentDomain = 'intahwebrouting.test';
 
         if(isset($_SERVER['HTTP_HOST']) == TRUE){
             $currentDomain = $_SERVER['HTTP_HOST'];
@@ -47,20 +39,16 @@ class DomainExample implements \Intahwebz\Domain {
 
         $currentURL = false;
 
-        if(isset($_SERVER['REQUEST_URI']) == TRUE){
-            $domainInfo['REQUEST_URI'] = $_SERVER['REQUEST_URI'];
-        }
-
         $domainInfo = new \Intahwebz\DomainInfo(
             $currentDomain,
-            ROOT_DOMAIN,
-            $canonicalDomain,   //$canonicalDomain,
+            'intahwebrouting.test',
+            $canonicalDomain,
             $this->request->getScheme(),
-            true,               //$httpsEnabled,
+            true,
             $currentURL
         );
 
-        return	$domainInfo;
+        return $domainInfo;
     }
 
     function getURLForCurrentDomain($path, $secure = FALSE) {
