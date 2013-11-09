@@ -26,12 +26,10 @@ interface ViewModel {
 
     function bindFunction($functionName, callable $callable);
 
-
     function setMergedParams(array $array);
 
     /** @return array */
     function getMergedParams();
-
 
     /**
      * @param $message
