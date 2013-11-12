@@ -20,10 +20,10 @@ class BasicViewModel implements ViewModel {
 
     private $mergedParams = array();
 
-    /**
-     * @var \Intahwebz\Route
-     */
-    protected $route;
+//    /**
+//     * @var \Intahwebz\Route
+//     */
+//    protected $route;
     
     /**
      * @var array Stores the variables available in the ViewModel
@@ -110,9 +110,9 @@ class BasicViewModel implements ViewModel {
         return array();
     }
 
-    function setRoute(\Intahwebz\Route $route){
-        $this->route = $route;
-    }
+//    function setRoute(\Intahwebz\Route $route){
+//        $this->route = $route;
+//    }
     
     function setRouteParams(array $params){
         $this->routeParams = $params;
@@ -135,6 +135,5 @@ class BasicViewModel implements ViewModel {
     function getMergedParams() {
         return $this->mergedParams;
     }
-
 }
 

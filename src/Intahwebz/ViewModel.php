@@ -22,7 +22,7 @@ interface ViewModel {
         
     function getTemplate();
 
-    function setRouteParams(array $params);
+    //function setRouteParams(array $params);
 
     function bindFunction($functionName, callable $callable);
 
