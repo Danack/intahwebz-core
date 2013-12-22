@@ -477,4 +477,31 @@ namespace { // global code
         return $output;
     }
 
+    function castToObject($fullClassName, $contentWithJoin) {
+        $newArray = array();
+
+        foreach($contentWithJoin as $key => $value){
+            $dotPosition = mb_strpos($key, ".");
+            if($dotPosition !== false){
+                $newKey = mb_substr($key, $dotPosition + 1);
+                $newArray[$newKey] = $value;
+            }
+        }
+
+        $newArray['uniqueID'] = uniqid();
+        $newArray['x-objectType'] = $fullClassName;
+
+        return json_decode_object_internal($newArray);
+    }
+
+
+    function castArraysToObjects($fullClassName, $contentWithJoinArray){
+        $objects = array();
+
+        foreach($contentWithJoinArray as $contentWithJoin){
+            $objects[]  = castToObject($fullClassName, $contentWithJoin);
+        }
+
+        return $objects;
+    }
 }
