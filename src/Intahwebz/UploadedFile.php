@@ -10,7 +10,7 @@ class UploadedFile {
     var $tmpName;
     var $size;
 
-    var	$contentType;
+    var $contentType;
 
     //TODO - where is this meant to be set.
     var $defaultContentType = null;
@@ -21,6 +21,10 @@ class UploadedFile {
         $this->size = $size;
 
         $this->determineContentType();
+    }
+
+    function delete() {
+        unlink($this->tmpName);
     }
 
     function determineContentType() {
@@ -44,7 +48,6 @@ class UploadedFile {
             }
         }
     }
-
 }
 
  

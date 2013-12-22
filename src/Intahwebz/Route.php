@@ -2,14 +2,14 @@
 
 namespace Intahwebz;
 
-interface Route{
+interface Route {
 
     public function getName();
 
     /**
-     * @return \Intahwebz\RouteMapping
+     * @return callable
      */
-    public function getMapping();
+    public function getCallable();
 
     public function generateURL(\Intahwebz\Domain $domain, $parameters, $absolute = false);
     public function mapParametersToFunctionArguments(Request $request);

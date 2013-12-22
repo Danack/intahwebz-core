@@ -8,6 +8,12 @@ interface Session {
 
     public function setSessionVariable($sessionName, $serializedData);
 
+    /**
+     * @param $name
+     * @param mixed $default
+     * @param bool $clear
+     * @return mixed
+     */
     public function getSessionVariable($name, $default = false, $clear = false);
 
     public function unsetSessionVariable($sessionName);
