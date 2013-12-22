@@ -477,6 +477,14 @@ namespace { // global code
         return $output;
     }
 
+    function convertObjectToArray($object){
+        $array = array();
+        foreach($object as $key => $value){
+            $array[$key] = $value;
+        }
+        return $array;
+    }
+
     function castToObject($fullClassName, $contentWithJoin) {
         $newArray = array();
 
