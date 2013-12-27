@@ -373,7 +373,7 @@ namespace { // global code
         return 'jpg';
     }
 
-    function getCalledFromString($stackLevel = 1){ //$stackLevel 1 = previous function
+    function getCalledFromString($stackLevel = 1) { //$stackLevel 1 = previous function
 
         $debugBackTrace = debug_backtrace();
 
@@ -381,55 +381,22 @@ namespace { // global code
         $line = "Unknown";
         $function = "Unknown";
 
-        $index = $stackLevel;
 
-        if(isset($debugBackTrace[$index]) == true){
-
-            if(isset($debugBackTrace[$index]['file']) == true){
-                $file = $debugBackTrace[$index]['file'];
+        if(isset($debugBackTrace[$stackLevel]) == true){
+            if(isset($debugBackTrace[$stackLevel]['file']) == true){
+                $file = $debugBackTrace[$stackLevel]['file'];
             }
-            if(isset($debugBackTrace[$index]['function']) == true){
-                $function = $debugBackTrace[$index]['function'];
+            if(isset($debugBackTrace[$stackLevel]['function']) == true){
+                $function = $debugBackTrace[$stackLevel]['function'];
             }
-            if(isset($debugBackTrace[$index + 1]['function']) == true){
-                $function = $debugBackTrace[$index + 1]['function'];
+            if(isset($debugBackTrace[$stackLevel + 1]['function']) == true){
+                $function = $debugBackTrace[$stackLevel + 1]['function'];
             }
-            if(isset($debugBackTrace[$index]['line']) == true){
-                $line = $debugBackTrace[$index]['line'];
+            if(isset($debugBackTrace[$stackLevel]['line']) == true){
+                $line = $debugBackTrace[$stackLevel]['line'];
             }
         }
 
-        /*if(function_exists('getSessionVariable') == true){
-            if(isset($GLOBALS['overrideForbiddenFunction']) == false ||
-                $GLOBALS['overrideForbiddenFunction'] == false){
-    
-                $clientID = false;
-    
-                if(isset($_SESSION['envelos']) == true){
-                    if(array_key_exists('clientID', $_SESSION['envelos']) == true){
-                        $clientID = $_SESSION['envelos']['clientID'];
-                    }
-                }
-    
-                if($clientID){	//We're in a session
-                    $forbiddenFunctions = array(
-                        'loadCountryScheme',
-                        'loadCountrySchemeForUserID',
-                        'loadCountrySchemeForClient'
-                    );
-    
-                    foreach($forbiddenFunctions as $forbiddenFunction){
-                        if(strcmp($function, $forbiddenFunction) === 0){
-                            $errorString = "Forbidden function [$forbiddenFunction] detected.";
-                            $errorString .= emitCallStack();
-                            logtoFileFatal($errorString);
-                        }
-                    }
-                }
-            }
-        }*/
-
-        //$calledFromString = "File ".$file." line ".$line." function ".$function;
         $calledFromString = "".$file." line ".$line." fn ".$function;
 
         return $calledFromString;
