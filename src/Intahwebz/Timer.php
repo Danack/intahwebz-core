@@ -25,12 +25,38 @@ class Timer {
         $this->timeRecords[] = array($time, $this->description);
 
         $this->startTime = null;
-        $this->lineNumber = null;
         $this->description = null;
     }
 
     function dumpTime() {
-        var_dump($this->timeRecords);
+
+        $totals = array();
+
+        foreach ($this->timeRecords as $timeRecord) {
+            $time = $timeRecord[0];
+            $description =  $timeRecord[1];
+
+            if(isset($totals[$description])) {
+                $total = $totals[$description];
+                $total['called'] += 1;
+                $total['time'] += $time;
+            }
+            else {
+                $total = array();
+                $total['called'] = 1;
+                $total['time'] = $time;
+
+                $totals[$description] = $total;
+            }
+        }
+
+        echo "Timer results\n";
+
+        foreach ($totals as $description => $total) {
+            echo '"'.$description.'", ';
+            echo 'called '.$total['called'].' time, ';
+            echo 'total time:'.$total['time']."\n";
+        }
     }
 }
 
