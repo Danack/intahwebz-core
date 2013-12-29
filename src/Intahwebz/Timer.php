@@ -55,7 +55,18 @@ class Timer {
         foreach ($totals as $description => $total) {
             echo '"'.$description.'", ';
             echo 'called '.$total['called'].' time, ';
-            echo 'total time:'.$total['time']."\n";
+            
+            
+            $time = $total['time'];
+            
+            if ($time < 0.000001) {
+                $time = ' < 0.000001';
+            }
+            else {
+                $time = round($time, 6);
+            }
+            
+            echo 'total time:'.$time."\n";
         }
     }
 }
