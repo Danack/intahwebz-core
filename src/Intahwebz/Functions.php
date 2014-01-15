@@ -33,6 +33,11 @@ namespace { // global code
     }
 
     function getNamespace($namespaceClass) {
+
+        if (is_object($namespaceClass)) {
+            $namespaceClass = get_class($namespaceClass);
+        }
+
         $lastSlashPosition = mb_strrpos($namespaceClass, '\\');
 
         if ($lastSlashPosition !== false) {
