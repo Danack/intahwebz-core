@@ -19,6 +19,16 @@ class Path {
         return $this->path;
     }
 
+    /**
+     * @param $directory
+     * @param $file
+     * @return File
+     */
+    function getFile($directory, $file) {
+        //TODO - make less shite
+        return new File($this->path.'/'.$directory.'/', $file);
+    }
+
     function getSafePath($directory, $file = null) {
         
         if (!$directory) {

@@ -26,6 +26,8 @@ class Session implements \Intahwebz\Session {
         $this->logger = $logger;
         $this->domain = $domain;
         $this->sessionName = $sessionName;
+
+        $this->initSession();
     }
 
     private function startSession() {
