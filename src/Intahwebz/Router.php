@@ -12,7 +12,7 @@ interface Router {
 
     /**
      * @param Request $request
-     * @return [Route, mixed]
+     * @return \Intahwebz\MatchedRoute
      */
     function getRouteForRequest(Request $request);
 }
