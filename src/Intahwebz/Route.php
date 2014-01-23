@@ -20,5 +20,7 @@ interface Route {
 
     public function getACLPrivilegeName();
     public function getACLResourceName();
+
+    function getDefaults();
 }
 

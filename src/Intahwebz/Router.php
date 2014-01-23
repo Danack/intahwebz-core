@@ -14,6 +14,6 @@ interface Router {
      * @param Request $request
      * @return \Intahwebz\MatchedRoute
      */
-    function getRouteForRequest(Request $request);
+    function matchRouteForRequest(Request $request);
 }
 
