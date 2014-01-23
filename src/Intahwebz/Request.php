@@ -6,6 +6,7 @@ namespace Intahwebz;
 
 interface Request {
 
+    function getClientIP();
     function getHostName();
     function setRouteParameters($routeParameters);
     function getScheme();
