@@ -9,6 +9,8 @@ class Session implements \Intahwebz\Session {
 
     static private $sessionClosed;
 
+    private $sessionStarted = false;
+
     private $logger;
 
     /**
@@ -31,19 +33,18 @@ class Session implements \Intahwebz\Session {
     }
 
     private function startSession() {
-        static $startSessionCalled = false;
 
-        if($startSessionCalled == true){
+        if($this->sessionStarted  == true){
             return;
         }
-
-        $startSessionCalled = true;
 
         //This sends a cookie header.
         //TODO - the whole way PHP has abstracted sessions with these functions just
         //sucks. You should be building up a complete response and then sending everything at once,
         //Not sending a header when this function is called.
         session_start();
+        
+        $this->sessionStarted = true;
     }
 
 
@@ -124,7 +125,11 @@ class Session implements \Intahwebz\Session {
      */
     function getSessionVariable($name, $default = false, $clear = false) {
 
-        $this->checkSessionOpen();
+        //$this->checkSessionOpen();
+
+        if ($this->sessionStarted == false) {
+            return $default;
+        }
 
         if(isset($_SESSION[$this->sessionName])){
             if(isset($_SESSION[$this->sessionName][$name])){

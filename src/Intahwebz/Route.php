@@ -17,11 +17,10 @@ interface Route {
 
     public function getTemplate();
 
-    public function getMergedParameters(Request $request);
+    public function getMergedParameters(Request $request, $params);
 
-    
-    public function getRouteParam($name);
-    public function getRouteParams();
+//    public function getRouteParam($name);
+//    public function getRouteParams();
 
     public function getACLPrivilegeName();
     public function getACLResourceName();

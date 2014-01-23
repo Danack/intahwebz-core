@@ -9,7 +9,7 @@ class APCObjectCache implements \Intahwebz\ObjectCache {
     function __construct() {
     }
 
-    function 	get($keyName){
+    function get($keyName) {
         $result = apc_fetch($keyName, $success);
         if ($success === false){
             return null;
@@ -17,11 +17,11 @@ class APCObjectCache implements \Intahwebz\ObjectCache {
         return $result;
     }
 
-    function 	put($keyName, $object, $ttl = 60){
+    function put($keyName, $object, $ttl = 60) {
         apc_store($keyName, $object, $ttl);
     }
 
-    function	clear($keyName){
+    function clear($keyName) {
         apc_delete($keyName);
     }
 }

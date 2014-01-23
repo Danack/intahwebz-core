@@ -15,7 +15,6 @@ interface Request {
     function getMethod();
 
     function getReferrer();
-
         /**
      * @param $variableName
      * @param mixed $default

@@ -76,8 +76,6 @@ namespace { // global code
         }
 
         foreach ($pathSegments as $segment) {
-            //echo "check $segment<br/>";
-
             if (file_exists($segment) === false) {
                 //echo "Had to create directory $segment";
                 $result = mkdir($segment);

@@ -12,7 +12,7 @@ interface Router {
 
     /**
      * @param Request $request
-     * @return Route
+     * @return [Route, mixed]
      */
     function getRouteForRequest(Request $request);
 }
