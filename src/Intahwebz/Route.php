@@ -16,8 +16,6 @@ interface Route {
 
     public function getTemplate();
 
-    public function getMergedParameters(Request $request, $params);
-
     public function getACLPrivilegeName();
     public function getACLResourceName();
 
