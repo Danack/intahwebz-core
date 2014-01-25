@@ -35,7 +35,7 @@ class MatchedRoute {
         return $this->route;
     }
 
-    function getMergedParameters() {
+    function getMergedParameters($prefix = '') {
         //later value for that key will overwrite the previous one, so higher priority values come later
         $mergedParameters = array();
         $mergedParameters = array_merge($mergedParameters, $this->route->getDefaults());
@@ -43,8 +43,15 @@ class MatchedRoute {
         $mergedParameters = array_merge($mergedParameters, $this->params);
         $mergedParameters = array_merge($mergedParameters, $this->request->getRequestParams());
 
-        return $mergedParameters;
+        if ($prefix != '') {
+            $injectableRouteParams = array();
+            foreach ($mergedParameters as $key => $value) {
+                $injectableRouteParams[':'.$key] = $value;
+            }
+            $mergedParameters = $injectableRouteParams;
+        }
 
+        return $mergedParameters;
     }
 }
 

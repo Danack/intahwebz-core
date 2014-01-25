@@ -6,18 +6,15 @@ interface Route {
 
     public function getName();
 
-    /**
-     * @return callable
-     */
-    public function getCallable();
-
     public function generateURL(\Intahwebz\Domain $domain, $parameters, $absolute = false);
     public function matchRequest(Request $request);
 
-    public function getTemplate();
-
-    public function getACLPrivilegeName();
-    public function getACLResourceName();
+    /**
+     * Gets on of the 'extra' values associated with this route.
+     * @param $key
+     * @return mixed
+     */
+    function get($key);
 
     function getDefaults();
 }
