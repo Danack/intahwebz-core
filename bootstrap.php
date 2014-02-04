@@ -12,9 +12,3 @@ require_once 'PHPUnit/TextUI/TestRunner.php';
 
 // Include the composer autoloader
 $autoloader = require dirname(__DIR__) . '/vendor/autoload.php';
-
-// Add the services file to the default service builder
-$servicesFile = __DIR__ . '/Guzzle/Tests/TestData/services/services.json';
-Guzzle\Tests\GuzzleTestCase::setServiceBuilder(Guzzle\Service\Builder\ServiceBuilder::factory($servicesFile));
-
-
