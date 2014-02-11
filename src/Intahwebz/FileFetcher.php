@@ -2,8 +2,6 @@
 
 namespace Intahwebz;
 
-//TODO - shouldn't this be in utils?
-
 interface FileFetcher {
 
     /**

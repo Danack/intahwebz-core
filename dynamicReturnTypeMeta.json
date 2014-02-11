@@ -1,0 +1,10 @@
+{
+    "methodCalls": [
+    ],
+    "functionCalls": [
+        {
+            "function": "\\castToObject",
+            "position": 0
+        }
+    ]
+}

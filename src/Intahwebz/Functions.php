@@ -158,6 +158,7 @@ namespace { // global code
                 $params[OBJECT_TYPE] = $type;
             }
 
+            //TODO - call __sleep first?
             foreach ($object as $key => $value) {
                 $value = json_encode_object_internal($value);
                 $params[$key] = $value;
@@ -233,6 +234,25 @@ namespace { // global code
     function    safeText($string) {
         return htmlentities($string, ENT_DISALLOWED | ENT_HTML401 | ENT_NOQUOTES, 'UTF-8');
     }
+
+
+    //TODO - use this.
+    function safeDir() {
+        //safe dir traversal
+
+        $basepath = '/foo/bar/baz/';
+        $realBase = realpath($basepath);
+
+        $userpath = $basepath . $_GET['path'];
+        $realUserPath = realpath($userpath);
+
+        if ($realUserPath === false || strpos($realUserPath, $realBase) !== 0) {
+            //Directory Traversal!
+        } else {
+            //Good path!
+        }
+    }
+
 
 //Converts an SQL datestamp into a formatted string
 // e.g. 2008-11-11 16:20:24
@@ -473,6 +493,7 @@ namespace { // global code
     }
 
 
+    //TODO - This needs hinting for dynamic return type. 
     function castArraysToObjects($fullClassName, $contentWithJoinArray){
         $objects = array();
 

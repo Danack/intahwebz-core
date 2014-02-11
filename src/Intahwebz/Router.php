@@ -6,8 +6,11 @@ namespace Intahwebz;
 
 interface Router {
 
+    /**
+     * @param $routeName
+     * @return Route
+     */
     function getRoute($routeName);
-    function generateURL(Routable $routable,  $absolute = false);
     function generateURLForRoute($routeName, $parameters = array(), $absolute = false);
 
     /**

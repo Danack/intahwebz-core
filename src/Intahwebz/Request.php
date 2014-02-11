@@ -24,4 +24,7 @@ interface Request {
      * @return mixed
      */
     function getVariable($variableName, $default = false, $minimum = false, $maximum = false);
+
+    function checkIfModifiedHeader($unixTime);
+    
 } 

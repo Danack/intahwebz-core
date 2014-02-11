@@ -19,6 +19,8 @@ class Session implements \Intahwebz\Session {
     private $domain;
 
     private $sessionName;
+    
+    public static $count = 0;
 
     function __construct(
         LoggerInterface $logger,
@@ -32,7 +34,7 @@ class Session implements \Intahwebz\Session {
         $this->initSession();
     }
 
-    private function startSession() {
+    public function startSession() {
 
         if($this->sessionStarted  == true){
             return;
@@ -42,8 +44,9 @@ class Session implements \Intahwebz\Session {
         //TODO - the whole way PHP has abstracted sessions with these functions just
         //sucks. You should be building up a complete response and then sending everything at once,
         //Not sending a header when this function is called.
-        session_start();
         
+        session_start();
+
         $this->sessionStarted = true;
     }
 
@@ -112,6 +115,10 @@ class Session implements \Intahwebz\Session {
         session_regenerate_id();
     }
 
+    function regenerateID() {
+        session_regenerate_id();
+    }
+    
     function unsetSessionVariable($name) {
         $this->checkSessionOpen();
         unset($_SESSION[$this->sessionName][$name]);
