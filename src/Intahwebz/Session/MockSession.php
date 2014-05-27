@@ -25,6 +25,14 @@ class MockSession implements \Intahwebz\Session {
     public function logoutUser() {
         // TODO: Implement logoutUser() method.
     }
+
+    public function startSession() {
+        // TODO: Implement startSession() method.
+    }
+
+    public function regenerateID() {
+        // TODO: Implement regenerateID() method.
+    }
 }
 
  

@@ -12,8 +12,7 @@ interface Router {
      */
     function getRoute($routeName);
     function generateURLForRoute(
-        $routeName, 
-        \Intahwebz\Domain $domain = null,  
+        $routeName,
         $parameters = array(),
         $absolute = false
     );
