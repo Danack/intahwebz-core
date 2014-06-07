@@ -6,7 +6,7 @@ interface Route {
 
     public function getName();
 
-    public function generateURL(\Intahwebz\Domain $domain, $parameters, $absolute = false);
+    public function generateURL($parameters, \Intahwebz\Domain $domain = null,  $absolute = false);
     public function matchRequest(Request $request);
 
     /**

@@ -14,6 +14,7 @@ interface Router {
     function generateURLForRoute(
         $routeName,
         $parameters = array(),
+        \Intahwebz\Domain $domain = null,
         $absolute = false
     );
 

@@ -390,7 +390,7 @@ namespace { // global code
         $fileExtension = mb_strtolower($pathInfo['extension']);
 
         if (in_array($fileExtension, $knownImageTypes) == true) {
-            return $knownImageTypes[$fileExtension];
+            return $fileExtension;
         }
 
         return 'jpg';
