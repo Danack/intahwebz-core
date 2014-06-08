@@ -44,7 +44,7 @@ namespace { // global code
             return mb_substr($namespaceClass, 0, $lastSlashPosition);
         }
 
-        return "\\";
+        return "";
     }
 
     function convertNamespaceClassToFilepath($namespaceClass) {
