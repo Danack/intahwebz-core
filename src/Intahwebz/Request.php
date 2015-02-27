@@ -14,6 +14,8 @@ interface Request {
     function getPath();
     function getPort();
     function getMethod();
+    function getHeader($headerName);
+    function getProtocol();
 
     function getReferrer();
         /**
